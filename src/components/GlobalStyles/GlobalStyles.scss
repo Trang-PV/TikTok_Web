@@ -1,0 +1,120 @@
+@import 'normalize.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #fe2c55;
+  --black: #333;
+  --text-color: rgba(22, 24, 35, 1);
+  --scroll-bar-color: rgba(22, 24, 35, 0.06);
+  --scroll-bar-bg-color: rgba(0, 0, 0, 0);
+
+  // Default layout
+  --default-layout-header-height: 60px;
+  --default-layout-width: 1150px;
+  --default-layout-horizontal-spacer: 24px;
+
+  --font-family: 'ProximaNova', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  color: var(--text-color);
+  overflow: overlay;
+}
+
+button,
+input,
+[tabindex] {
+  border: none;
+  outline: none;
+}
+
+a[href] {
+  // color: var(--text-color);
+  text-decoration: none;
+}
+
+// Font embed
+@font-face {
+  font-family: ProximaNova;
+  src: url('/assets/fonts/Proxima-Nova-Bold.woff2');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: SofiaPro;
+  src: url('/assets/fonts/sofiapro-bold.woff');
+  font-weight: 700;
+}
+
+// Custom Tippy tooltip
+body {
+  .tippy-box {
+    text-align: left;
+    background-color: rgba(84, 84, 84, 0.92);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    padding: 8px;
+  }
+
+  .tippy-arrow {
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  .tippy-box[data-placement^='bottom'] > .tippy-arrow::before {
+    top: -8px;
+  }
+
+  .tippy-content {
+    padding: 0;
+  }
+}
+
+// Scrollbar
+*::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-button {
+  display: none;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--scroll-bar-bg-color);
+}
+
+*::-webkit-scrollbar-track-piece {
+  background-color: var(--scroll-bar-bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-bar-color);
+  border-radius: 24px;
+}
